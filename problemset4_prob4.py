@@ -1,4 +1,4 @@
-import math 
+import math
 
 def nestEggVariable(salary, save, growthRates):
     yearlyAccountTotalList = []
@@ -30,8 +30,8 @@ def findMaxExpenses(salary, save, preRetireGrowthRates, postRetireGrowthRates,
 
     low = 0
     high = finalYearSavings
-    guess = (low + high) / 2.0
     while True:
+        guess = (low + high) / 2.0
         lastYearAlive = postRetirement(finalYearSavings, postRetireGrowthRates, guess).pop()
         if math.fabs(lastYearAlive) < epsilon:
             break
@@ -39,7 +39,6 @@ def findMaxExpenses(salary, save, preRetireGrowthRates, postRetireGrowthRates,
             low = guess
         else:
             high = guess
-        guess = (low + high) / 2.0
     return guess
 
 
